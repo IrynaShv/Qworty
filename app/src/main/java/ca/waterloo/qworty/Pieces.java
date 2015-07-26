@@ -40,10 +40,16 @@ import android.graphics.Paint;
       Piece[] availablePieces = new Piece[16];
       public Pieces()
       {
-          for(int i=0; i<16; i++) {
-           // availablePieces[i]
-          }
+          for(int i=0; i<16; i++)
+            for (int j = 0; j <=1; j++)
+                for (int k = 0; j <=1; j++)
+                    for (int l = 0; j <= 1; j++)
+                        for (int m = 0; j <= 1; j++) {
+                            if( m ==0)
+                                availablePieces[i]= new Piece(Shape.values()[j],Size.values()[k],Fill.values()[l],"#FFFFFF");
+                            else
+                                availablePieces[i]= new Piece(Shape.values()[j],Size.values()[k],Fill.values()[l],"#000000");
+                        }
+
       }
-
-
 }
