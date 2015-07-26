@@ -8,17 +8,13 @@ import android.graphics.Paint;
 
   class Pieces {
 
-    private int xPosition;
-    private int yPosition;
     private String shape;
     private String size;
     private String fill;
     private String color;
     private Paint paint;
 
-    public Pieces(int xPos, int yPos, String shape, String size, String fill, String color){
-        xPosition = xPos;
-        yPosition = yPos;
+    public Pieces( String shape, String size, String fill, String color){
         this.shape = shape;
         this.size = size;
         this.fill = fill;
@@ -26,11 +22,5 @@ import android.graphics.Paint;
         paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.parseColor(color));
-    }
-    public void setX(int x){
-        xPosition = x;
-    }
-    public void setY(int y){
-        yPosition = y;
     }
 }
