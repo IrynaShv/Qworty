@@ -16,9 +16,7 @@ public class Pieces {
     private String color;
     private Paint paint;
 
-    public Pieces(int xPos, int yPos, String shape, String size, String fill, String color){
-        xPosition = xPos;
-        yPosition = yPos;
+    public Pieces(int xPos, int yPos, String shape, String size, String fill, String color) {
         this.shape = shape;
         this.size = size;
         this.fill = fill;
@@ -26,11 +24,5 @@ public class Pieces {
         paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.parseColor(color));
-    }
-    public void setX(int x){
-        xPosition = x;
-    }
-    public void setY(int y){
-        yPosition = y;
     }
 }
