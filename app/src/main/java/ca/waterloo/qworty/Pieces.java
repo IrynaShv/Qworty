@@ -3,10 +3,10 @@ package ca.waterloo.qworty;
 import android.graphics.Color;
 import android.graphics.Paint;
 
-/**
- * Created by tristan on 2015-07-26.
- */
-public class Pieces {
+
+ // Created by tristan on 2015-07-26.
+
+  class Pieces {
 
     private int xPosition;
     private int yPosition;
