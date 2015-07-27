@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
     enum Size {BIG, SMALL}
-    enum Fill {WITH_X, WITHOUT_X}
+    enum Fill {HOLLOW, SOLID}
     enum Shape {SQUARE, CIRCLE}
 
     class Piece {
@@ -52,5 +52,23 @@ import android.graphics.Paint;
                         }
 
       }
+      /*
+      Square Big Hollow Black       [0]
+      Square Big Hollow White       [1]
+      Square Big noHollow Black     [2]
+      Square Big noHollow White     [3]
+      Square Small Hollow Black     [4]
+      Square Small Hollow White     [5]
+      Square Small noHollow Black   [6]
+      Square Small noHollow White   [7]
+      Circle Big Hollow Black       [8]
+      Circle Big Hollow White       [9]
+      Circle Big noHollow Black     [10]
+      Circle Big noHollow White     [11]
+      Circle Small Hollow Black     [12]
+      Circle Small Hollow White     [13]
+      Circle Small noHollow Black   [14]
+      Circle Small noHollow White   [15]
+       */
 }
 //tristan is bestest
