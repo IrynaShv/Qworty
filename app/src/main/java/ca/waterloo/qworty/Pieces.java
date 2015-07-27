@@ -14,6 +14,8 @@ import android.graphics.Paint;
         private String color;
         private Paint paint;
         private boolean used;
+        private int xPos;
+        private int yPos;
 
         public Piece( Shape shape, Size size, Fill fill, String color){
             this.used = false;
@@ -29,7 +31,8 @@ import android.graphics.Paint;
         public void UsePiece(){
             SetUsed(true);
         }
-
+        public void SetX(int x) {xPos = x;}
+        public void SetY(int y) {yPos = y;}
         public boolean GetUsed(){return used;}
         public void SetUsed(boolean val){used = val;}
     }
