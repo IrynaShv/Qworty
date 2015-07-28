@@ -58,6 +58,7 @@ import android.graphics.Paint;
   class Pieces {
 
       Piece[] availablePieces = new Piece[16];
+
       public Pieces()
       {
           for(int i=0; i<16; i++)
@@ -72,6 +73,9 @@ import android.graphics.Paint;
                         }
 
       }
+
+      public Piece[] getPieces() {return availablePieces;}
+
       /*
       Square Big Hollow Black       [0]
       Square Big Hollow White       [1]
