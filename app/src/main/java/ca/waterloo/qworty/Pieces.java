@@ -17,7 +17,7 @@ import android.graphics.Paint;
         private boolean used;
         private int xPos;
         private int yPos;
-       // private int radius;
+        private int radius;
 
         public Piece(Shape shape, Size size, Fill fill, String color){
             this.used = false;
@@ -39,9 +39,18 @@ import android.graphics.Paint;
         public int GetY() {return yPos;}
         public boolean GetUsed(){return used;}
         public void SetUsed(boolean val){used = val;}
+        public Shape GetShape() {return shape;}
+        public Fill GetFill() {return fill;}
 
         public void DrawPiece(Canvas givenCanvas,Piece givenPiece) {
 
+
+
+            if(givenPiece.GetShape() == Shape.SQUARE) {
+                if(givenPiece.GetFill() == )
+            }
+
+            //givenCanvas.drawRect(givenPiece.GetX() - givenPiece.radius, givenPiece.GetY() - givenPiece.radius,givenPiece.GetX() + givenPiece.radius, givenPiece.GetY() + givenPiece.radius, givenPiece.paint);
         }
     }
 
