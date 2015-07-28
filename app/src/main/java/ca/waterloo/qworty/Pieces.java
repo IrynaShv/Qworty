@@ -1,5 +1,6 @@
 package ca.waterloo.qworty;
 
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
@@ -16,8 +17,9 @@ import android.graphics.Paint;
         private boolean used;
         private int xPos;
         private int yPos;
+       // private int radius;
 
-        public Piece( Shape shape, Size size, Fill fill, String color){
+        public Piece(Shape shape, Size size, Fill fill, String color){
             this.used = false;
             this.shape = shape;
             this.size = size;
@@ -32,9 +34,15 @@ import android.graphics.Paint;
             SetUsed(true);
         }
         public void SetX(int x) {xPos = x;}
+        public int GetX() {return xPos;}
         public void SetY(int y) {yPos = y;}
+        public int GetY() {return yPos;}
         public boolean GetUsed(){return used;}
         public void SetUsed(boolean val){used = val;}
+
+        public void DrawPiece(Canvas givenCanvas,Piece givenPiece) {
+
+        }
     }
 
 
