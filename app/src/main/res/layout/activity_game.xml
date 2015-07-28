@@ -28,6 +28,10 @@
             android:layout_weight=".2"
             android:id="@+id/piece_view">
 
+            <ca.uwaterloo.qworty.PieceView
+                android:id="@+id/fill_piece_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
         </LinearLayout>
 
     </LinearLayout>
