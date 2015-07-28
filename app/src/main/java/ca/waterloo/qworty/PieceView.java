@@ -6,12 +6,20 @@ import android.view.View;
 
 public class PieceView extends View {
 
-    public PieceView(Context context) {
+    private Pieces pieces;
+    private int width;
+    private int height;
+    private int pieceWidth;
+
+
+    public PieceView(Context context, Pieces newPieces) {
         super(context);
+        pieces = newPieces;
     }
 
     protected void OnDraw(Canvas canvas){
-        //super.onDraw(canvas);
+        width = this.getWidth();
+        height = this.getHeight();
 
     }
 }

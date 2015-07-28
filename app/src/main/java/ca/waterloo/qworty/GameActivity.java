@@ -8,10 +8,14 @@ import android.view.MenuItem;
 
 public class GameActivity extends ActionBarActivity {
 
+    PieceView pv;
+    Pieces pieces = new Pieces();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        pv = new PieceView(this, pieces);
     }
 
     @Override
