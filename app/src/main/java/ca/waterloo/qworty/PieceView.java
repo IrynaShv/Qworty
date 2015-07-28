@@ -21,5 +21,7 @@ public class PieceView extends View {
         width = this.getWidth();
         height = this.getHeight();
 
+        //for(int i = 0; i<)
+
     }
 }
