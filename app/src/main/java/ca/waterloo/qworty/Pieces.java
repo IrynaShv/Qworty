@@ -41,13 +41,18 @@ import android.graphics.Paint;
         public void SetUsed(boolean val){used = val;}
         public Shape GetShape() {return shape;}
         public Fill GetFill() {return fill;}
+        public void SetRadius(int r) {radius = r;}
+        public Size GetSize() { return size;}
 
         public void DrawPiece(Canvas givenCanvas,Piece givenPiece) {
 
 
 
             if(givenPiece.GetShape() == Shape.SQUARE) {
-                if(givenPiece.GetFill() == )
+                if(givenPiece.GetFill() == Fill.HOLLOW) {
+                    givenCanvas.drawRect(givenPiece.GetX() - givenPiece.radius, givenPiece.GetY() - givenPiece.radius,givenPiece.GetX() + givenPiece.radius, givenPiece.GetY() + givenPiece.radius, givenPiece.paint);
+                    givenCanvas.drawRect(givenPiece.GetX() - givenPiece.radius, givenPiece.GetY() - givenPiece.radius,givenPiece.GetX() + givenPiece.radius, givenPiece.GetY() + givenPiece.radius, givenPiece.paint);
+                }
             }
 
             //givenCanvas.drawRect(givenPiece.GetX() - givenPiece.radius, givenPiece.GetY() - givenPiece.radius,givenPiece.GetX() + givenPiece.radius, givenPiece.GetY() + givenPiece.radius, givenPiece.paint);
