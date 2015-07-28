@@ -71,26 +71,18 @@ import android.graphics.Paint;
         public Size GetSize() {
             return size;
         }
-       /* public Paint OppositePaint(){
-            Paint tmpPaint = new Paint();
-            if(this.color == Colour.BLACK )
-            {
 
-            }
-        }*/
 
         public void DrawPiece(Canvas givenCanvas) {
 
 
 
             if(this.shape == Shape.SQUARE) {
-                if(fill == Fill.HOLLOW) {
-                    givenCanvas.drawRect(xPos - radius, yPos - radius,xPos + radius, yPos + radius, paint);
-                    givenCanvas.drawRect(xPos - (radius/2), yPos - (radius/2) ,xPos + (radius/2), yPos + (radius/2), paint);
-                }
+                givenCanvas.drawRect(xPos - radius, yPos - radius,xPos + radius, yPos + radius, paint);
             }
-
-            //givenCanvas.drawRect(givenPiece.GetX() - givenPiece.radius, givenPiece.GetY() - givenPiece.radius,givenPiece.GetX() + givenPiece.radius, givenPiece.GetY() + givenPiece.radius, givenPiece.paint);
+            else {
+                givenCanvas.drawCircle(xPos, yPos, radius, paint);
+            }
         }
     }
 
