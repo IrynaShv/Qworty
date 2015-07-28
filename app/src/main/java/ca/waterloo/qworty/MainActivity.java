@@ -18,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
 
         // New Game Button
         Button newGameBtn = (Button) this.findViewById(R.id.main_new_game_button);
+        setActivityBackgroundColor(0x670A0A);
         newGameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,4 +49,9 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void setActivityBackgroundColor(int color) {
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(color);
+    }
+
 }
