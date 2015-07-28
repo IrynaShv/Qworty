@@ -19,7 +19,9 @@
         android:text="@string/welcome"
         android:textAlignment="center"
         android:textSize="48sp"
-        android:typeface="sans" />
+
+        android:typeface="sans"
+        android:textColor="#ffffff"/>
 
     <Button
         android:id="@+id/main_new_game_button"
