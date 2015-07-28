@@ -2,6 +2,7 @@ package ca.waterloo.qworty;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
 
@@ -11,9 +12,9 @@ public class PieceView extends View {
     private int width, height, viewWidth, viewHeight, smallPieceRad, bigPieceRad, widthCent, heightCent, screenHeightWOView;
     private Context gameContext;
 
-    public PieceView(Context context, Pieces newPieces) {
-        super(context);
-        pieces = newPieces;
+    public PieceView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        pieces = new Pieces();
         gameContext = context;
     }
 
