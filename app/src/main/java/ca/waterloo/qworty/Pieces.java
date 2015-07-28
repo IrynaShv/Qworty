@@ -7,51 +7,86 @@ import android.graphics.Paint;
     enum Size {BIG, SMALL}
     enum Fill {HOLLOW, SOLID}
     enum Shape {SQUARE, CIRCLE}
+    enum Colour {BLACK, WHITE}
 
     class Piece {
         private Shape shape;
         private Size size;
         private Fill fill;
-        private String color;
+        private Colour color;
         private Paint paint;
         private boolean used;
         private int xPos;
         private int yPos;
         private int radius;
 
-        public Piece(Shape shape, Size size, Fill fill, String color){
+        public Piece(Shape shape, Size size, Fill fill, Colour color){
             this.used = false;
             this.shape = shape;
             this.size = size;
             this.fill = fill;
             this.color = color;
             paint = new Paint();
-            paint.setStyle(Paint.Style.FILL);
-            paint.setColor(Color.parseColor(color));
+            if(this.fill == Fill.HOLLOW) {
+                paint.setStyle(Paint.Style.STROKE);
+            }
+            if(color == Colour.BLACK) {
+                paint.setColor(Color.parseColor("#FFFFFF"));
+            }
+            else{
+                paint.setColor(Color.parseColor("#000000"));
+            }
         }
 
         public void UsePiece(){
             SetUsed(true);
         }
-        public void SetX(int x) {xPos = x;}
-        public int GetX() {return xPos;}
-        public void SetY(int y) {yPos = y;}
-        public int GetY() {return yPos;}
-        public boolean GetUsed(){return used;}
-        public void SetUsed(boolean val){used = val;}
-        public Shape GetShape() {return shape;}
-        public Fill GetFill() {return fill;}
-        public void SetRadius(int r) {radius = r;}
-        public Size GetSize() { return size;}
+        public void SetX(int x) {
+            xPos = x;
+        }
+        public int GetX() {
+            return xPos;
+        }
+        public void SetY(int y) {
+            yPos = y;
+        }
+        public int GetY() {
+            return yPos;
+        }
+        public boolean GetUsed(){
+            return used;
+        }
+        public void SetUsed(boolean val){
+            used = val;
+        }
+        public Shape GetShape() {
+            return shape;
+        }
+        public Fill GetFill() {
+            return fill;
+        }
+        public void SetRadius(int r) {
+            radius = r;
+        }
+        public Size GetSize() {
+            return size;
+        }
+       /* public Paint OppositePaint(){
+            Paint tmpPaint = new Paint();
+            if(this.color == Colour.BLACK )
+            {
 
-        public void DrawPiece(Canvas givenCanvas,Piece givenPiece) {
+            }
+        }*/
+
+        public void DrawPiece(Canvas givenCanvas) {
 
 
 
-            if(givenPiece.GetShape() == Shape.SQUARE) {
-                if(givenPiece.GetFill() == Fill.HOLLOW) {
-                    givenCanvas.drawRect(givenPiece.GetX() - givenPiece.radius, givenPiece.GetY() - givenPiece.radius,givenPiece.GetX() + givenPiece.radius, givenPiece.GetY() + givenPiece.radius, givenPiece.paint);
-                    givenCanvas.drawRect(givenPiece.GetX() - (givenPiece.radius/2), givenPiece.GetY() - (givenPiece.radius/2) ,givenPiece.GetX() + (givenPiece.radius/2), givenPiece.GetY() + (givenPiece.radius/2), givenPiece.paint);
+            if(this.shape == Shape.SQUARE) {
+                if(fill == Fill.HOLLOW) {
+                    givenCanvas.drawRect(xPos - radius, yPos - radius,xPos + radius, yPos + radius, paint);
+                    givenCanvas.drawRect(xPos - (radius/2), yPos - (radius/2) ,xPos + (radius/2), yPos + (radius/2), paint);
                 }
             }
 
@@ -72,9 +107,9 @@ import android.graphics.Paint;
                     for (int l = 0; j <= 1; j++)
                         for (int m = 0; j <= 1; j++) {
                             if( m ==0)
-                                availablePieces[i]= new Piece(Shape.values()[j],Size.values()[k],Fill.values()[l],"#FFFFFF");
+                                availablePieces[i]= new Piece(Shape.values()[j],Size.values()[k],Fill.values()[l],Colour.values()[0]);
                             else
-                                availablePieces[i]= new Piece(Shape.values()[j],Size.values()[k],Fill.values()[l],"#000000");
+                                availablePieces[i]= new Piece(Shape.values()[j],Size.values()[k],Fill.values()[l],Colour.values()[1]);
                         }
 
       }
