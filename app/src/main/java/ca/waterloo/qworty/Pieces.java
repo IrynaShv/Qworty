@@ -51,7 +51,7 @@ import android.graphics.Paint;
             if(givenPiece.GetShape() == Shape.SQUARE) {
                 if(givenPiece.GetFill() == Fill.HOLLOW) {
                     givenCanvas.drawRect(givenPiece.GetX() - givenPiece.radius, givenPiece.GetY() - givenPiece.radius,givenPiece.GetX() + givenPiece.radius, givenPiece.GetY() + givenPiece.radius, givenPiece.paint);
-                    givenCanvas.drawRect(givenPiece.GetX() - givenPiece.radius, givenPiece.GetY() - givenPiece.radius,givenPiece.GetX() + givenPiece.radius, givenPiece.GetY() + givenPiece.radius, givenPiece.paint);
+                    givenCanvas.drawRect(givenPiece.GetX() - (givenPiece.radius/2), givenPiece.GetY() - (givenPiece.radius/2) ,givenPiece.GetX() + (givenPiece.radius/2), givenPiece.GetY() + (givenPiece.radius/2), givenPiece.paint);
                 }
             }
 
@@ -80,6 +80,7 @@ import android.graphics.Paint;
       }
 
       public Piece[] getPieces() {return availablePieces;}
+      public Piece getPieceAt(int i){return availablePieces[i];}
 
       /*
       Square Big Hollow Black       [0]
